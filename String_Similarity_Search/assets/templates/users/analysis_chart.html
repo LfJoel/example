@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block mainblock %}
+{% load staticfiles %}
+
+<style>
+     .sidemenu{
+    border-style:solid;
+    border-width:1px;
+    width:00px;
+    height:450px;
+    float:left;
+    position:fixed;
+    right:1em;
+    top:10em;
+    background:rgba(255, 87, 51,0.8);
+}
+
+</style>
+
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: " STRING_SIMILARITY_SEARCH"
+	},
+	data: [{
+	{% if chart_type == "bar" %}
+		type: "bar",
+	{% elif chart_type == "pie" %}
+		type: "pie",
+	{% elif chart_type == "spline" %}
+		type: "spline",
+	{% endif %}
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+		{% for o in objects %}
+			{y: {{o.total}}, label: "{{o.original_cluster}}"},
+		{% endfor %}
+		]
+	}]
+});
+chart.render();
+
+}
+
+</script>
+
+<div id="chartContainer" class="graph" style="height: 370px; width: 1120px; margin: 0px auto;margin-top:100px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+{% endblock %}

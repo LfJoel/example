@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>index</title>
+
+    <style>
+        body{
+        background-image:url('{% static 'bg1.jpg' %}');
+        background-size:cover;
+        }
+        .header{
+        width:100%;
+        height:100px;
+        text-align:center;
+            font-family: Aldrich;
+    margin-left: -580px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="mains">
+    <div class="header">
+        <h1 style="color:steelblue;font-family:File;    margin-left: 964px">
+STRING_SIMILARITY_SEARCH </h1>
+        <table style="width:100%;">
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        <table style="width:100%;" class="menus">
+            <tr>
+                <td><a href="{% url 'user_home' %}" style="text-decoration:none;margin-left:900px;color:white;">~HOME~</a></td>
+                <td><a href="{% url 'user_upload' %}" style="text-decoration:none;color:white;">~UPLOAD DOCUMENT~</a></td>
+                <td><a href="{% url 'analysislist' %}" style="text-decoration:none;color:white;">~ANALYSIS~</a></td>
+                <td><a href="{% url 'user_match' %}" style="text-decoration:none;color:white;">~SIMILARITY SEARCH~</a></td>
+                 <td><a href="{% url 'ucharts' 'bar' %}" style="text-decoration:none;color:white;">~CHARTS~</a></td>
+                <td><a href="{% url 'analysis_chart' 'spline' %}" style="text-decoration:none;color:white;">~GRAPH~</a></td>
+                <td><a href="{% url 'user_login' %}" style="text-decoration:none;color:white;">~LOGOUT~</a></td>
+            </tr>
+        </table>
+
+
+    </div>
+{% block mainblock %}
+{% endblock %}
+</div>
+</body>
+</html>

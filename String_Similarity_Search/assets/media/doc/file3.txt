@@ -1,0 +1,9 @@
+As a significant business paradigm many online information platforms have largescale  emerged to satisfy society s needs for personspecific data where a service provider
+ collects raw data from data contributors and then offers valueadded data services to data consumers However in the data trading layer the data consumers face 
+a pressing problem ie how to verify whether the service provider has truthfully collected largescale and processed data Furthermore the data markets contributors largescale supporting  are usually
+ unwilling to reveal their sensitive personal data and real identities to the data consumers In this paper we propose TPDM which efficiently integrates
+ Truthfulness and Privacy preservation in Data markets TPDM is structured internally in an EncryptthenSign fashion using partially holomorphic encryption and
+ identitybased signature contributors It simultaneously facilitates batch largescale  verification data processing and outcome verification while maintaining identity preservation and
+ data confidentiality We also instantiate TPDM with a profile matching service and a data distribution service and extensively evaluate their performances on Yahoo
+ Music largescale  ratings dataset and 2009 RECS dataset respectively Our analysis and evaluation results reveal that TPDM achieves several desirable properties while markets
+incurring low computation and communication largescale  overheads markets when supporting largescale data markets

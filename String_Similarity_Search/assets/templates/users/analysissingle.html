@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block mainblock %}
+{% load staticfiles %}
+
+<style>
+    .surr{
+    background: steelblue;
+    margin-top: 28px;
+    font-family: Aldrich;
+    width: 70%;
+    height: 450px;
+    margin-left: 15%;
+    border-radius: 10px;
+    overflow: auto;
+    }.positives{
+padding:3px;
+color:white;
+text-transform:uppercase;
+background:red;
+}
+.negatives{
+back
+.notin{
+color:white;
+}
+</style>
+
+<div class="surr">
+    <table>
+        <tr>
+            <td><p style="color:white">Title</p></td>
+            <td style="color:white">{{doc_obj.title}}</td>
+        </tr>
+        <tr style="visibility:collapse;">
+            <td><p>Author</p></td>
+            <td>{{doc_obj.author}}</td>
+        </tr>
+        <tr style="visibility:collapse;">
+            <td><p>Uploaded Date</p></td>
+            <td>{{doc_obj.uploaded_date}}</td>
+        </tr>
+        <tr>
+            <td style="color:white"><p>question</p></td>
+            <td style="color:white">{{doc_obj.tweet}}</td>
+        </tr>
+        <tr>
+            <td style="color:white"><p>Document</p></td>
+            <td style="color:white">{{doc_obj.document}}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+            {% for d in my_list %}
+    {% if d in mywords %}
+        <span class="positives" style="color:white">{{d}}</span>
+    {% else %}
+        <span class="notin" style="color:white">{{d}}</span>
+    {% endif %}
+{% endfor %}
+</td>
+        </tr>
+    </table>
+</div>
+
+{{val}}
+
+{% endblock %}

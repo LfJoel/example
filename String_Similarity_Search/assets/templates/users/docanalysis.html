@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block mainblock %}
+{% load staticfiles %}
+
+<style>
+    .tbl{
+        overflow: auto;
+    background: steelblue;
+    float: left;
+    padding: 10px;
+    position: relative;
+    top: 51px;
+    left: 35%;
+    height: 376px;
+    width: 400px;
+    border-radius: 10px;
+    font-family: Aldrich;
+    }
+    .tbl table{
+        border-spacing:0px;
+        text-align:center;
+    }
+    .tbl table tr th{
+    background:black;
+    color:white;
+    padding:;
+    }
+    .tbl table tr td{
+    padding:10px;
+    }
+    .sfg{
+    height: 203px;
+    width: 400px;
+    border-style: solid;
+    border-color: black;
+    float: right;
+    margin-top: 134px;
+    background: url("{% static 'ssss.png' %}");
+    background-size: 100%100%;
+    border-radius: 10px;
+    }
+</style>
+
+<div class="tbl">
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Document</th>
+            <th>k-means clustering</th>
+        </tr>
+        {% for doc in doc_obj %}
+        <tr>
+            <td style="color:white">{{doc.title}}</td>
+            <td style="color:white">{{doc.document}}</td>
+            <td><a href="{% url 'analysisdoc' doc.id %}" style="color:black;text-decoration:none">Analysis</a></td>
+        {% endfor %}
+        </tr>
+    </table>
+</div>
+<div class="sfg"></div>
+
+{% endblock %}

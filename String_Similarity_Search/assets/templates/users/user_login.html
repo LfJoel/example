@@ -1,0 +1,88 @@
+<html>
+{% load staticfiles %}
+<head>
+<style>
+ body{
+        background-image:url('{% static 'bg1.jpg' %}');
+        background-size:100% 100%;
+        }
+.login{
+width: 300px;
+    position: absolute;
+    top: 228px;
+    left: 7em;
+    float: left;
+    background: steelblue;
+    padding: 16px;
+    border-radius: 10px;
+    font-family: Aldrich;
+}
+input[type=submit]{
+width:100%;
+background:#c7552e;
+color:white;
+border:1px solid black;
+padding:15px;
+text-transform:uppercase;
+}
+table tr{
+height:50px;
+}
+.ds{
+border-style:solid;
+height:100px;
+width:300;
+margin-left:525px;
+ background-image:url('{% static 'ss.png' %}');
+ background-size:cover;
+ border-radius: 10px;
+}
+.dse{
+border-style:solid;
+height:300px;
+width:300;
+margin-left:900px;
+margin-top:50px;
+background-image:url('{% static 'sss.png' %}');
+ background-size:100%100%;
+ background-color: whitesmoke;
+    border-radius: 10px;
+
+}
+input{
+font-family:Aldrich;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<h1 style="color:#119afe; text-align:center; font-family:File;">
+STRING_SIMILARITY_SEARCH </h1>
+<div class="login">
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+
+            </tr>
+            <tr>
+                <td><label style="color:white">USER NAME</label></td>
+                <td><input type="text" name="username" placeholder="Enter User Name"></td>
+            </tr>
+            <tr>
+                <td><label style="color:white">PASSWORD</label></td>
+                <td><input type="password" name="password" placeholder="Enter Your password"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" name="submit" value="SUBMIT"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a href="{% url 'user_register' %}" style="color:white;text-decoration:none;"> New User ??? Please click here to Register!!!</a></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="ds"></div>
+<div class="dse"></div>
+</body>
+</html>

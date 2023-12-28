@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block mainblock %}
+{% load staticfiles %}
+
+<style>
+.formholder{
+float:left;
+margin-left:20%;
+margin-top:6%;
+height:300px;
+width:300px;
+}
+select{
+width:66%;
+}
+input[type=submit]
+{
+background:white;
+border:1px solid white;
+padding-left:25px;
+padding-right:25px;
+padding-top:15px;
+padding-bottom:15px;
+text-transform:uppercase;
+}
+input[type=submit]:hover
+{
+    background:#035671;
+    color:white;
+}
+table.uploadform{
+background: steelblue;
+    margin-left: -149px;
+    text-align: center;
+    font-family: Aldrich;
+    border-radius: 10px;
+}
+table.uploadform tr{
+height:80px;
+}
+label{
+color:white;
+}
+.any{
+    height: 274px;
+    width: 401px;
+    border-style: solid;
+    border-color: black;
+    float: left;
+    margin-left: 302px;
+    margin-top: 100px;
+    background: url("{% static 'linear.png' %}");
+    backgroun-size: cover;
+    background-size: 100%100%;
+    border-radius: 10px;
+    }
+    input{
+    padding:8px;
+    font-family:Aldrich;
+
+    }
+</style>
+
+
+<div class="formholder">
+<form method='post' enctype='multipart/form-data'>
+{% csrf_token %}
+
+
+<table class="uploadform">
+
+    <tr>
+        <td><label style="color:white">TITLE</label></td>
+        <td><label style="color:white">:</label></td>
+        <td>{{form.title}}</td>
+    </tr>
+    <tr>
+        <td><label style="color:white">STRING SIMILARITY</label></td>
+        <td><label  style="color:white">:</label></td>
+        <td style="color:white">{{form.original_cluster}}</td>
+    </tr>
+    <tr>
+        <td ><label style="color:white">DOCUMENTS</label></td>
+        <td><label style="color:white">:</label></td>
+        <td>{{form.document}}</td>
+    </tr>
+
+    <tr>
+        <td><input type="submit" value="submit" style="margin-left:100px;"/></td>
+    </tr>
+</table>
+
+</form>
+</div>
+
+</div>
+<div class="any"></div>
+
+{% endblock %}

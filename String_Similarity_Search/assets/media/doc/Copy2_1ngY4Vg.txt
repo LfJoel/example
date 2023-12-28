@@ -1,0 +1,18 @@
+The dna sample to be sequenced is combined in a tube with primer dna polymerase and dna nucleotides dATP dTTP dGTP and dCTP The four dyelabeled chain
+terminating dideoxy nucleotides are added as we ll but in much smaller amounts than the ordinary nucleotides
+The mixture is first heated to denature the template dna separate the strands then cooled so that the primer can bind to the singlestranded template 
+Once the primer has bound the temperature is raised again allowing dna polymerase to synthesize new dna starting from the primer dna polymerase will 
+continue adding nucleotides to the chain until it happens to add a dideoxy nucleotide instead of a normal one At that point no further nucleotides can be added
+ so the strand will end with the dideoxy nucleotide
+This process is repeated in a number of cycles By the time the cycling is complete its virtually guaranteed that a dideoxy nucleotide will have been incorporated
+ at every single position of the target dna in at least one reaction That is the tube will contain fragments of different lengths ending at each of the
+ nucleotide positions in the original dna see figure below The ends of the fragments will be labeled with dyes that indicate their final nucleotide You may 
+have heard of genomes being sequenced For instance the human genome was completed in 2003 after a manyyear international effort But what does it mean to 
+sequence a genome or even a small fragment of dna 
+dna sequencing is the process of determining the sequence of nucleotide bases As Ts Cs and Gs in a piece of dna Today with the right equipment and materials 
+sequencing a short piece of dna is relatively straightforward
+Sequencing an entire genome all of an organisms dna remains a complex task It requires breaking the dna of the genome into many smaller pieces sequencing the
+ pieces and assembling the sequences into a single long consensus However thanks to new methods that have been developed over the past two decades genome 
+sequencing is now much faster and less expensive than it was during the Human Genome Project
+In this article well take a look at methods used for dna sequencing Well focus on one well established method Sanger sequencing but we ll also discuss 
+new next generation  methods that have reduced the cost and accelerated the speed of largescale sequencing

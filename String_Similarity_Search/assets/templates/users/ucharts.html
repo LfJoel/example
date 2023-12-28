@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block mainblock %}
+{% load staticfiles %}
+<style>
+    body{
+
+    }
+
+     .topic h1{
+           color:white;
+           padding:2px;
+           text-align:center;
+           border-style:none;
+           height:100px;
+           width:1330px;
+           float:left;
+     }
+     #chartContainer{
+            width: 900px;
+            margin-left: 365px;
+            margin-top: -354px;
+            position: fixed;
+     }
+     .sidemenu{
+     margin-top: 118px;
+     color:steelblue;
+     }
+</style>
+
+
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: ""
+	},
+	data: [{
+	{% if chart_type == "bar" %}
+		type: "bar",
+	{% elif chart_type == "pie" %}
+		type: "pie",
+	{% elif chart_type == "column" %}
+		type: "column",
+	{% endif %}
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+		{% for o in form %}
+			{y: {{o.dcount}}, label: "{{o.sname}}"},
+		{% endfor %}
+		]
+	}]
+});
+chart.render();
+
+}
+
+</script>
+</head>
+<body>
+<div class="topic">
+
+
+
+<div class="sidemenu">
+    <h3 style="color:black;margin-left:60px;margin-top:80px"><a href="{% url 'ucharts' 'pie' %}" >PIE CHAERT</a></h3>
+    <h3 style="color:white;margin-left:60px;margin-top:100px;"><a href="{% url 'ucharts' 'bar' %}">BAR CHART</a></h3>
+    <h3 style="color:white;margin-left:60px;margin-top:100px;"><a href="{% url 'ucharts' 'column' %}">COLOUMN CHART</a></h3>
+</div>
+<div id="chartContainer" class="graph"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</body>
+{% endblock %}
